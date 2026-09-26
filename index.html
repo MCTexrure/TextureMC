@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextureMC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">T</div>
+          <div>
+            <p class="eyebrow">Minecraft toolkit</p>
+            <h1>TextureMC</h1>
+          </div>
+        </div>
+        <button id="downloadBtn" class="primary-btn" disabled>Export pack</button>
+      </header>
+
+      <main class="layout">
+        <aside class="panel sidebar">
+          <div class="panel-header">
+            <h2>Import resource pack</h2>
+          </div>
+
+          <label class="upload-box" for="zipInput">
+            <input id="zipInput" type="file" accept=".zip" />
+            <span>Drop a .zip pack here or click to browse</span>
+          </label>
+
+          <div class="meta-card">
+            <h3>Pack info</h3>
+            <div id="packMeta" class="meta-empty">No pack loaded</div>
+          </div>
+
+          <div class="meta-card">
+            <h3>Texture actions</h3>
+            <button id="replaceBtn" class="secondary-btn" type="button" disabled>Replace selected texture</button>
+            <input id="replaceInput" type="file" accept="image/*" hidden />
+          </div>
+        </aside>
+
+        <section class="panel preview-panel">
+          <div class="panel-header">
+            <h2>Preview</h2>
+          </div>
+
+          <div id="previewPane" class="preview-pane empty">
+            <div class="empty-state">
+              <div class="empty-icon">🧩</div>
+              <p>Select a texture to preview it here.</p>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel files-panel">
+          <div class="panel-header">
+            <h2>Textures</h2>
+          </div>
+          <ul id="textureList" class="texture-list">
+            <li class="placeholder">No textures yet.</li>
+          </ul>
+        </aside>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
